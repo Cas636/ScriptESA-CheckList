@@ -1,0 +1,1150 @@
+const fs = require('fs');
+const puppeteer = require('puppeteer'); // v20.7.4 or later
+
+(async () => {
+    const browser = await puppeteer.launch({headless: 'new'});
+    const page = await browser.newPage();
+    const timeout = 5000;
+    page.setDefaultTimeout(timeout);
+
+    const lhApi = await import('lighthouse'); // v10.0.0 or later
+    const flags = {
+        screenEmulation: {
+            disabled: true
+        }
+    }
+    const config = lhApi.desktopConfig;
+    const lhFlow = await lhApi.startFlow(page, {name: 'CheckList Manto Preventivo', config, flags});
+    {
+        const targetPage = page;
+        await targetPage.setViewport({
+            width: 882,
+            height: 712
+        })
+    }
+    await lhFlow.startTimespan();
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[1]/td[2]/span/span[1]/span/span[2])'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 15.975677490234375,
+                y: 5.8992919921875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 23.760406494140625,
+                y: 3.826385498046875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[2]/td[2]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(2) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[2]/td[2]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(2) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 2.968719482421875,
+                y: 0.9062347412109375,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 15.760406494140625,
+                y: 8.829849243164062,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[3]/td[2]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(2) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[3]/td[2]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(2) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 4.968719482421875,
+                y: 1.9097137451171875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 15.760406494140625,
+                y: 9.83331298828125,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[4]/td[2]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[4]/td[2]/span/span[1]/span/span[2])'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 13.975677490234375,
+                y: 12.694427490234375,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 33.760406494140625,
+                y: 7.62152099609375,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(2) b',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[5]/td[2]/span/span[1]/span/span[2]/b',
+                'pierce/tr.rowHover > td:nth-of-type(2) b'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(2) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[5]/td[2]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(2) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 5.968719482421875,
+                y: 0.46875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 37.760406494140625,
+                y: 9.374969482421875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(2) b',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[6]/td[2]/span/span[1]/span/span[2]/b',
+                'pierce/tr.rowHover > td:nth-of-type(2) b'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(2) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[6]/td[2]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(2) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 3.968719482421875,
+                y: 1.472198486328125,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 29.760406494140625,
+                y: 9.39581298828125,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(2) b',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[7]/td[2]/span/span[1]/span/span[2]/b',
+                'pierce/tr.rowHover > td:nth-of-type(2) b'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(2) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[7]/td[2]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(2) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 0.968719482421875,
+                y: 2.475677490234375,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 18.760406494140625,
+                y: 9.3992919921875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(2) b',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[8]/td[2]/span/span[1]/span/span[2]/b',
+                'pierce/tr.rowHover > td:nth-of-type(2) b'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(2) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[8]/td[2]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(2) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: -1.031280517578125,
+                y: 0.479156494140625,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 23.760406494140625,
+                y: 7.385406494140625,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[9]/td[2]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[9]/td[2]/span/span[1]/span/span[2])'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(2) span.select2-selection__arrow')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 1.975677490234375,
+                y: 7.479156494140625,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 28.760406494140625,
+                y: 8.38885498046875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[1]/td[4]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(4) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[1]/td[4]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(4) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 2.1839599609375,
+                y: 3.125,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 44.97564697265625,
+                y: 12.048599243164062,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[2]/td[4]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[2]/td[4]/span/span[1]/span/span[2])'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 3.19091796875,
+                y: 8.124984741210938,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 23.97564697265625,
+                y: 12.829849243164062,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[3]/td[4]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(4) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[3]/td[4]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(4) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 2.1839599609375,
+                y: 1.9097137451171875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 39.97564697265625,
+                y: 9.83331298828125,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[4]/td[4]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[4]/td[4]/span/span[1]/span/span[2])'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 4.19091796875,
+                y: 11.694427490234375,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 33.97564697265625,
+                y: 11.84375,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(4) b',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[5]/td[4]/span/span[1]/span/span[2]/b',
+                'pierce/tr.rowHover > td:nth-of-type(4) b'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[5]/td[4]/span/span[1]/span/span[2])'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 12.19091796875,
+                y: 11.6875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 20.97564697265625,
+                y: 4.374969482421875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(4) b',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[6]/td[4]/span/span[1]/span/span[2]/b',
+                'pierce/tr.rowHover > td:nth-of-type(4) b'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(4) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[6]/td[4]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(4) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 6.1839599609375,
+                y: 3.472198486328125,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 31.97564697265625,
+                y: 12.39581298828125,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[7]/td[4]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(4) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[7]/td[4]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(4) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 2.1839599609375,
+                y: -0.524322509765625,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 30.97564697265625,
+                y: 8.3992919921875,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[8]/td[4]/span/span[1]/span/span[2]',
+                'pierce/tr.rowHover > td:nth-of-type(4) span.select2-selection__arrow'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(4) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[8]/td[4]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(4) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: -0.8160400390625,
+                y: 1.479156494140625,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 28.97564697265625,
+                y: 11.385406494140625,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'tr.rowHover > td:nth-of-type(4) b',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[9]/td[4]/span/span[1]/span/span[2]/b',
+                'pierce/tr.rowHover > td:nth-of-type(4) b'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('tr.rowHover > td:nth-of-type(4) b'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[9]/td[4]/span/span[1]/span/span[2]/b)'),
+            targetPage.locator(':scope >>> tr.rowHover > td:nth-of-type(4) b')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 2.1839599609375,
+                y: -0.51739501953125,
+              },
+            });
+    }
+    {
+        const timeout = 5000;
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            timeout: 5000,
+            target: 'main',
+            selectors: [
+                'aria/Si[role="option"]'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Si[role=\\"option\\"])')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 39.97564697265625,
+                y: 8.38885498046875,
+              },
+            });
+    }
+    {
+        const targetPage = page;
+        await waitForElement({
+            type: 'waitForElement',
+            target: 'main',
+            selectors: [
+                'aria/Guardar[role="button"]',
+                'table input',
+                'xpath///*[@id="ui-id-31"]/form/table/tbody/tr[10]/td/input',
+                'pierce/table input',
+                'text/Guardar'
+            ]
+        }, targetPage, timeout);
+    }
+    {
+        const targetPage = page;
+        await puppeteer.Locator.race([
+            targetPage.locator('::-p-aria(Guardar[role=\\"button\\"])'),
+            targetPage.locator('table input'),
+            targetPage.locator('::-p-xpath(//*[@id=\\"ui-id-31\\"]/form/table/tbody/tr[10]/td/input)'),
+            targetPage.locator(':scope >>> table input'),
+            targetPage.locator('::-p-text(Guardar)')
+        ])
+            .setTimeout(timeout)
+            .click({
+              offset: {
+                x: 43.222198486328125,
+                y: 7.58331298828125,
+              },
+            });
+    }
+    await lhFlow.endTimespan();
+    const lhFlowReport = await lhFlow.generateReport();
+    fs.writeFileSync(__dirname + '/flow.report.html', lhFlowReport)
+
+    await browser.close();
+
+    async function waitForElement(step, frame, timeout) {
+      const {
+        count = 1,
+        operator = '>=',
+        visible = true,
+        properties,
+        attributes,
+      } = step;
+      const compFn = {
+        '==': (a, b) => a === b,
+        '>=': (a, b) => a >= b,
+        '<=': (a, b) => a <= b,
+      }[operator];
+      await waitForFunction(async () => {
+        const elements = await querySelectorsAll(step.selectors, frame);
+        let result = compFn(elements.length, count);
+        const elementsHandle = await frame.evaluateHandle((...elements) => {
+          return elements;
+        }, ...elements);
+        await Promise.all(elements.map((element) => element.dispose()));
+        if (result && (properties || attributes)) {
+          result = await elementsHandle.evaluate(
+            (elements, properties, attributes) => {
+              for (const element of elements) {
+                if (attributes) {
+                  for (const [name, value] of Object.entries(attributes)) {
+                    if (element.getAttribute(name) !== value) {
+                      return false;
+                    }
+                  }
+                }
+                if (properties) {
+                  if (!isDeepMatch(properties, element)) {
+                    return false;
+                  }
+                }
+              }
+              return true;
+
+              function isDeepMatch(a, b) {
+                if (a === b) {
+                  return true;
+                }
+                if ((a && !b) || (!a && b)) {
+                  return false;
+                }
+                if (!(a instanceof Object) || !(b instanceof Object)) {
+                  return false;
+                }
+                for (const [key, value] of Object.entries(a)) {
+                  if (!isDeepMatch(value, b[key])) {
+                    return false;
+                  }
+                }
+                return true;
+              }
+            },
+            properties,
+            attributes
+          );
+        }
+        await elementsHandle.dispose();
+        return result === visible;
+      }, timeout);
+    }
+
+    async function querySelectorsAll(selectors, frame) {
+      for (const selector of selectors) {
+        const result = await querySelectorAll(selector, frame);
+        if (result.length) {
+          return result;
+        }
+      }
+      return [];
+    }
+
+    async function querySelectorAll(selector, frame) {
+      if (!Array.isArray(selector)) {
+        selector = [selector];
+      }
+      if (!selector.length) {
+        throw new Error('Empty selector provided to querySelectorAll');
+      }
+      let elements = [];
+      for (let i = 0; i < selector.length; i++) {
+        const part = selector[i];
+        if (i === 0) {
+          elements = await frame.$$(part);
+        } else {
+          const tmpElements = elements;
+          elements = [];
+          for (const el of tmpElements) {
+            elements.push(...(await el.$$(part)));
+          }
+        }
+        if (elements.length === 0) {
+          return [];
+        }
+        if (i < selector.length - 1) {
+          const tmpElements = [];
+          for (const el of elements) {
+            const newEl = (await el.evaluateHandle(el => el.shadowRoot ? el.shadowRoot : el)).asElement();
+            if (newEl) {
+              tmpElements.push(newEl);
+            }
+          }
+          elements = tmpElements;
+        }
+      }
+      return elements;
+    }
+
+    async function waitForFunction(fn, timeout) {
+      let isActive = true;
+      const timeoutId = setTimeout(() => {
+        isActive = false;
+      }, timeout);
+      while (isActive) {
+        const result = await fn();
+        if (result) {
+          clearTimeout(timeoutId);
+          return;
+        }
+        await new Promise(resolve => setTimeout(resolve, 100));
+      }
+      throw new Error('Timed out');
+    }
+})().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
